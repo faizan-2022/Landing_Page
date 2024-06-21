@@ -1,0 +1,7 @@
+Main color:  #101010 (blackish)
+
+buttons:  #fbda03 (yellowish) or transparent
+
+paragraphs:  #cbcbcb
+
+Headings:   generally white
