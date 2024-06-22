@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [colorChange, setColorchange] = useState(false);
@@ -21,26 +22,31 @@ const Navbar = () => {
 
 
   return (
-      <div className='flex justify-between items-center px-20 py-4 sticky top-0' style={{ backgroundColor: colorChange ? '#5f5f5f' : 'transparent' }}>
+      <nav className='flex justify-between items-center px-20 py-4 fixed top-0 w-full transition-all duration-300' style={{ backgroundColor: colorChange ? '#101010' : 'transparent', zIndex: "999"}}>
 
       <div className=''>
-        <img className='h-[4rem] self-center' src="./images/main_logo.png" alt="logo" />
+        <img className='h-[3.5rem] self-center' src="./images/main_logo.png" alt="logo" />
       </div>
 
       <div className=''>
 
         <ul className='flex text-sm'>
-        <li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>HOME</li>
-        <li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>CONNECT</li>
-        <li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>ABOUT</li>
-        <li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>CONTACT</li>
-        <li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>LOGIN</li>
+
+        <Link to="/"><li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>HOME</li></Link>
+
+        <Link to="/connect"><li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>CONNECT</li></Link>
+
+        <Link to="about"><li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>ABOUT</li></Link>
+
+        <Link to="/contact"><li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>CONTACT</li></Link>
+
+        <Link to="/login"><li className='mx-5 cursor-pointer text-gray-300 hover:text-yellow-400 transition duration-300'>LOGIN</li></Link>
 
         </ul>
 
       </div>
 
-      </div>
+      </nav>
   )
 }
 

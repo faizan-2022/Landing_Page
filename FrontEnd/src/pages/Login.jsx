@@ -11,7 +11,7 @@ const Login = () => {
   };
 
   return (
-    <div
+    <section
       className="min-h-screen bg-cover flex items-center"
       style={{ backgroundImage: "url('/images/login_img.jpg')" }}
     >
@@ -91,7 +91,7 @@ const Login = () => {
           </Link>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

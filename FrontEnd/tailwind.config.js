@@ -5,8 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'playfair': ['"Playfair Display"', 'serif'],
+      },
       colors: {
-        'custom-gray': '#101010',
+        facebook: '#1877F2',
+        instagram: '#E4405F',
+        youtube: '#FF0000',
+        twitter: '#1DA1F2',
       },
     },
   },
