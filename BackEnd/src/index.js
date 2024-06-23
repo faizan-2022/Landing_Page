@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const env = require("dotenv");
 const cors = require("cors");
-const mongoose = require("mongoose");
 const authAdminRoute = require("../routes/authAdminRoutes.js");
 const authUserRoute = require("../routes/authUserRoutes.js");
 const userRoute = require("../routes/userRoutes.js");
+const connectDB = require("../db/connection.js");
 
 env.config();
 
@@ -17,12 +17,7 @@ const corsAllow = {
 
 app.use(cors(corsAllow));
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(()=>console.log("DB Connection Successful!"))
-  .catch((err)=>{
-  console.log(err);
-});
+connectDB();
 
 app.use(express.json());
 app.use("/api/admin/auth", authAdminRoute);
