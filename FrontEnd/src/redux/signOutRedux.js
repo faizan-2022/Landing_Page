@@ -18,7 +18,7 @@ const signOutSlice = createSlice({
       localStorage.removeItem("img");
       localStorage.removeItem("userId");
       localStorage.removeItem("email");
-    }
+    },
   },
 });
 

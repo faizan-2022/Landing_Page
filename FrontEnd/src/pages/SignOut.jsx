@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
-import { Navigate } from 'react-router-dom';
-import { signOutUser } from '../redux/signOutRedux';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import { signOutUser } from "../redux/signOutRedux";
+import { useDispatch } from "react-redux";
 
 const SignOut = () => {
-
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(signOutUser());
-  },[dispatch])
+  }, [dispatch]);
 
-  return <Navigate to='/login' />
+  return <Navigate to="/login" />;
   // <div>hi</div>
 };
 
