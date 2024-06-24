@@ -5,7 +5,7 @@ const cors = require("cors");
 const authAdminRoute = require("../routes/authAdminRoutes.js");
 const authUserRoute = require("../routes/authUserRoutes.js");
 const userRoute = require("../routes/userRoutes.js");
-const connectDB = require("../db/connection.js");
+const { default: mongoose } = require("mongoose");
 
 env.config();
 
@@ -17,7 +17,12 @@ const corsAllow = {
 
 app.use(cors(corsAllow));
 
-connectDB();
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(()=>console.log("DB Connection Successful!"))
+    .catch((err)=>{
+    console.log(err);
+});
 
 app.use(express.json());
 app.use("/api/admin/auth", authAdminRoute);
